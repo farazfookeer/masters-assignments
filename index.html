@@ -6,17 +6,19 @@
   <title>Faraz Fookeer | Master's Assignments</title>
   <style>
     :root {
-      --bg: #f7f6f3;
-      --panel: #ffffff;
-      --panel-alt: #f2f0eb;
-      --text: #1f1f1c;
-      --muted: #6b675f;
-      --border: #e3dfd7;
-      --accent: #c87b47;
-      --accent-soft: #f3e7de;
-      --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 30px rgba(0,0,0,0.03);
+      --bg: #212121;
+      --panel: #2f2f2f;
+      --panel-2: #262626;
+      --card: #2b2b2b;
+      --border: rgba(255,255,255,0.08);
+      --text: #ececec;
+      --muted: #a1a1aa;
+      --soft: #c5c5d2;
+      --accent: #19c37d;
+      --button-dark: #171717;
+      --shadow: 0 0 0 1px rgba(255,255,255,0.03);
       --radius: 18px;
-      --max-width: 1120px;
+      --max-width: 980px;
     }
 
     * {
@@ -31,9 +33,9 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Inter, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.55;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -43,162 +45,163 @@
       text-decoration: none;
     }
 
+    .page {
+      min-height: 100vh;
+      padding: 28px 20px 60px;
+    }
+
     .container {
-      width: min(var(--max-width), calc(100% - 32px));
+      width: min(var(--max-width), 100%);
       margin: 0 auto;
     }
 
-    .hero {
-      padding: 56px 0 28px;
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      margin-bottom: 22px;
+      background: rgba(33,33,33,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    .hero-inner {
-      max-width: 760px;
+    .topbar-inner {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 14px 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f3f3f3;
+    }
+
+    .hero {
+      margin-bottom: 24px;
+    }
+
+    .hero-card {
+      padding: 8px 2px 0;
     }
 
     .eyebrow {
       display: inline-block;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      font-size: 0.76rem;
       text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--muted);
-      margin-bottom: 14px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
-      line-height: 1.04;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.08;
       font-weight: 650;
       letter-spacing: -0.03em;
+      color: #f5f5f5;
     }
 
     .hero p {
-      margin: 16px 0 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 680px;
+      margin: 14px 0 0;
+      max-width: 760px;
+      color: var(--soft);
+      font-size: 1.02rem;
     }
 
     .meta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 24px;
+      margin-top: 18px;
     }
 
     .pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border: 1px solid var(--border);
+      padding: 8px 12px;
       border-radius: 999px;
-      background: var(--panel);
+      background: #2a2a2a;
+      border: 1px solid var(--border);
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.88rem;
     }
 
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin: 24px 0 18px;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-size: 1.15rem;
-      font-weight: 650;
-      letter-spacing: -0.02em;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .section-title {
+      margin: 28px 0 14px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: #d9d9e3;
     }
 
     .docs {
       display: grid;
-      gap: 22px;
-      padding-bottom: 56px;
+      gap: 18px;
     }
 
     .doc-card {
-      background: var(--panel);
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: 24px;
       overflow: hidden;
       box-shadow: var(--shadow);
     }
 
     .doc-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 24px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .doc-meta {
-      max-width: 760px;
+      padding: 18px 18px 16px;
+      background: linear-gradient(180deg, #2d2d2d 0%, #2a2a2a 100%);
     }
 
     .doc-title-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
       align-items: center;
-      margin-bottom: 10px;
+      gap: 8px;
+      margin-bottom: 8px;
     }
 
-    .doc-meta h3 {
+    .doc-title {
       margin: 0;
-      font-size: 1.22rem;
-      line-height: 1.2;
-      font-weight: 640;
+      font-size: 1.04rem;
+      font-weight: 650;
+      color: #f1f1f1;
       letter-spacing: -0.02em;
     }
 
     .tag {
       display: inline-flex;
       align-items: center;
-      padding: 6px 10px;
+      padding: 5px 9px;
       border-radius: 999px;
-      background: var(--accent-soft);
-      color: #8a5633;
-      font-size: 0.8rem;
-      font-weight: 600;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.05);
+      color: #cfcfd6;
+      font-size: 0.78rem;
+      font-weight: 500;
     }
 
-    .doc-meta p {
+    .doc-desc {
       margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
+      color: #b4b4bd;
+      font-size: 0.95rem;
     }
 
     .doc-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      justify-content: flex-end;
-      flex-shrink: 0;
+      margin-top: 14px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 42px;
-      padding: 0 15px;
-      border-radius: 12px;
-      font-size: 0.95rem;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
       font-weight: 600;
-      transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
-      border: 1px solid var(--border);
+      border: 1px solid transparent;
+      transition: 0.15s ease;
       cursor: pointer;
     }
 
@@ -207,245 +210,232 @@
     }
 
     .btn-primary {
-      background: var(--text);
-      color: #fff;
-      border-color: var(--text);
+      background: #f4f4f4;
+      color: #171717;
+      border-color: rgba(255,255,255,0.12);
     }
 
     .btn-primary:hover {
-      background: #2a2a26;
+      background: #ffffff;
     }
 
     .btn-secondary {
-      background: var(--panel);
-      color: var(--text);
+      background: transparent;
+      color: #e8e8e8;
+      border-color: rgba(255,255,255,0.12);
     }
 
     .btn-secondary:hover {
-      background: var(--panel-alt);
+      background: rgba(255,255,255,0.05);
     }
 
-    .embed-wrap {
-      padding: 18px;
-      background: #f4f1eb;
+    .preview-wrap {
+      display: none;
+      padding: 14px;
+      background: #272727;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .preview-wrap.active {
+      display: block;
     }
 
     .pdf-frame {
       width: 100%;
       height: 720px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: #fff;
       display: block;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      background: #1f1f1f;
     }
 
     .footer {
-      padding: 0 0 48px;
-      color: var(--muted);
-      font-size: 0.92rem;
+      margin-top: 24px;
+      color: #9f9fa8;
+      font-size: 0.9rem;
+      text-align: center;
     }
 
-    @media (max-width: 900px) {
-      .doc-top {
-        flex-direction: column;
+    @media (max-width: 700px) {
+      .page {
+        padding: 18px 12px 40px;
       }
 
-      .doc-actions {
-        justify-content: flex-start;
-      }
-
-      .pdf-frame {
-        height: 560px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero {
-        padding-top: 36px;
-      }
-
-      .container {
-        width: min(var(--max-width), calc(100% - 20px));
+      .topbar-inner {
+        width: min(var(--max-width), calc(100% - 24px));
       }
 
       .doc-top,
-      .embed-wrap {
-        padding: 16px;
+      .preview-wrap {
+        padding: 12px;
       }
 
       .pdf-frame {
-        height: 420px;
-      }
-
-      .pill {
-        font-size: 0.86rem;
+        height: 430px;
       }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="eyebrow">Academic Writing Archive</div>
-        <h1>Master’s Assignments</h1>
-        <p>
-          A curated collection of essays exploring artificial intelligence,
-          philosophy, identity, expertise, and human–machine relationships.
-        </p>
+  <div class="topbar">
+    <div class="topbar-inner">Master’s Assignments</div>
+  </div>
 
-        <div class="meta-row">
-          <div class="pill">Faraz Fookeer</div>
-          <div class="pill">Embedded PDF library</div>
-          <div class="pill">Hosted on GitHub Pages</div>
+  <div class="page">
+    <main class="container">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="eyebrow">Academic Archive</div>
+          <h1>Master’s Assignments</h1>
+          <p>
+            A curated collection of essays exploring artificial intelligence,
+            philosophy, identity, expertise, and human–machine relationships.
+          </p>
+
+          <div class="meta-row">
+            <div class="pill">Faraz Fookeer</div>
+            <div class="pill">Embedded PDF library</div>
+            <div class="pill">GitHub Pages</div>
+          </div>
         </div>
-      </div>
-    </div>
-  </header>
+      </section>
 
-  <main class="container">
-    <div class="section-head">
-      <h2>Documents</h2>
-      <p>Read inline or open each paper in full</p>
-    </div>
+      <h2 class="section-title">Documents</h2>
 
-    <section class="docs">
-      <article class="doc-card">
-        <div class="doc-top">
-          <div class="doc-meta">
+      <section class="docs">
+        <article class="doc-card">
+          <div class="doc-top">
             <div class="doc-title-row">
-              <h3>AI Domination</h3>
+              <h3 class="doc-title">AI Domination</h3>
               <span class="tag">AI Ethics</span>
             </div>
-            <p>
-              An essay examining the implications of AI dominance and its wider
-              social and philosophical consequences.
-            </p>
+            <p class="doc-desc">An essay examining the implications of AI dominance and its wider social and philosophical consequences.</p>
+            <div class="doc-actions">
+              <button class="btn btn-primary" onclick="togglePreview('pdf1', this)">Preview</button>
+              <a class="btn btn-secondary" href="AI%20Domination.pdf" target="_blank">Open PDF</a>
+              <a class="btn btn-secondary" href="AI%20Domination.pdf" download>Download</a>
+            </div>
           </div>
-          <div class="doc-actions">
-            <a class="btn btn-primary" href="AI%20Domination.pdf" target="_blank">Open PDF</a>
-            <a class="btn btn-secondary" href="AI%20Domination.pdf" download>Download</a>
+          <div class="preview-wrap" id="pdf1">
+            <iframe class="pdf-frame" src="AI%20Domination.pdf"></iframe>
           </div>
-        </div>
-        <div class="embed-wrap">
-          <iframe class="pdf-frame" src="AI%20Domination.pdf"></iframe>
-        </div>
-      </article>
+        </article>
 
-      <article class="doc-card">
-        <div class="doc-top">
-          <div class="doc-meta">
+        <article class="doc-card">
+          <div class="doc-top">
             <div class="doc-title-row">
-              <h3>Artificial Experts</h3>
+              <h3 class="doc-title">Artificial Experts</h3>
               <span class="tag">Philosophy of AI</span>
             </div>
-            <p>
-              A discussion on expertise, authority, and the extent to which
-              artificial systems may be treated as expert agents.
-            </p>
+            <p class="doc-desc">A discussion on expertise, authority, and the extent to which artificial systems may be treated as expert agents.</p>
+            <div class="doc-actions">
+              <button class="btn btn-primary" onclick="togglePreview('pdf2', this)">Preview</button>
+              <a class="btn btn-secondary" href="Artificial%20Experts.pdf" target="_blank">Open PDF</a>
+              <a class="btn btn-secondary" href="Artificial%20Experts.pdf" download>Download</a>
+            </div>
           </div>
-          <div class="doc-actions">
-            <a class="btn btn-primary" href="Artificial%20Experts.pdf" target="_blank">Open PDF</a>
-            <a class="btn btn-secondary" href="Artificial%20Experts.pdf" download>Download</a>
+          <div class="preview-wrap" id="pdf2">
+            <iframe class="pdf-frame" src="Artificial%20Experts.pdf"></iframe>
           </div>
-        </div>
-        <div class="embed-wrap">
-          <iframe class="pdf-frame" src="Artificial%20Experts.pdf"></iframe>
-        </div>
-      </article>
+        </article>
 
-      <article class="doc-card">
-        <div class="doc-top">
-          <div class="doc-meta">
+        <article class="doc-card">
+          <div class="doc-top">
             <div class="doc-title-row">
-              <h3>Can AI be Said to Possess a Self?</h3>
+              <h3 class="doc-title">Can AI be Said to Possess a Self?</h3>
               <span class="tag">Identity</span>
             </div>
-            <p>
-              An exploration of selfhood, identity, and whether contemporary AI
-              can meaningfully be described as possessing a self.
-            </p>
-          </div>
-          <div class="doc-actions">
-            <a class="btn btn-primary" href="Can%20AI%20be%20Said%20to%20Possess%20a%20Self%3F.pdf" target="_blank">Open PDF</a>
-            <a class="btn btn-secondary" href="Can%20AI%20be%20Said%20to%20Possess%20a%20Self%3F.pdf" download>Download</a>
-          </div>
-        </div>
-        <div class="embed-wrap">
-          <iframe class="pdf-frame" src="Can%20AI%20be%20Said%20to%20Possess%20a%20Self%3F.pdf"></iframe>
-        </div>
-      </article>
-
-      <article class="doc-card">
-        <div class="doc-top">
-          <div class="doc-meta">
-            <div class="doc-title-row">
-              <h3>Can Machines Think?</h3>
-              <span class="tag">Mind & Cognition</span>
+            <p class="doc-desc">An exploration of selfhood, identity, and whether contemporary AI can meaningfully be described as possessing a self.</p>
+            <div class="doc-actions">
+              <button class="btn btn-primary" onclick="togglePreview('pdf3', this)">Preview</button>
+              <a class="btn btn-secondary" href="Can%20AI%20be%20Said%20to%20Possess%20a%20Self%3F.pdf" target="_blank">Open PDF</a>
+              <a class="btn btn-secondary" href="Can%20AI%20be%20Said%20to%20Possess%20a%20Self%3F.pdf" download>Download</a>
             </div>
-            <p>
-              A philosophical treatment of machine thought, intelligence, and the
-              longstanding questions surrounding cognition and computation.
-            </p>
           </div>
-          <div class="doc-actions">
-            <a class="btn btn-primary" href="Can%20Machines%20Think%3F.pdf" target="_blank">Open PDF</a>
-            <a class="btn btn-secondary" href="Can%20Machines%20Think%3F.pdf" download>Download</a>
+          <div class="preview-wrap" id="pdf3">
+            <iframe class="pdf-frame" src="Can%20AI%20be%20Said%20to%20Possess%20a%20Self%3F.pdf"></iframe>
           </div>
-        </div>
-        <div class="embed-wrap">
-          <iframe class="pdf-frame" src="Can%20Machines%20Think%3F.pdf"></iframe>
-        </div>
-      </article>
+        </article>
 
-      <article class="doc-card">
-        <div class="doc-top">
-          <div class="doc-meta">
+        <article class="doc-card">
+          <div class="doc-top">
             <div class="doc-title-row">
-              <h3>Human-Robot Relationships</h3>
+              <h3 class="doc-title">Can Machines Think?</h3>
+              <span class="tag">Mind &amp; Cognition</span>
+            </div>
+            <p class="doc-desc">A philosophical treatment of machine thought, intelligence, and the longstanding questions surrounding cognition and computation.</p>
+            <div class="doc-actions">
+              <button class="btn btn-primary" onclick="togglePreview('pdf4', this)">Preview</button>
+              <a class="btn btn-secondary" href="Can%20Machines%20Think%3F.pdf" target="_blank">Open PDF</a>
+              <a class="btn btn-secondary" href="Can%20Machines%20Think%3F.pdf" download>Download</a>
+            </div>
+          </div>
+          <div class="preview-wrap" id="pdf4">
+            <iframe class="pdf-frame" src="Can%20Machines%20Think%3F.pdf"></iframe>
+          </div>
+        </article>
+
+        <article class="doc-card">
+          <div class="doc-top">
+            <div class="doc-title-row">
+              <h3 class="doc-title">Human-Robot Relationships</h3>
               <span class="tag">Human–Machine Relations</span>
             </div>
-            <p>
-              An essay on intimacy, ethics, and the changing boundaries between
-              humans and machines in relational contexts.
-            </p>
+            <p class="doc-desc">An essay on intimacy, ethics, and the changing boundaries between humans and machines in relational contexts.</p>
+            <div class="doc-actions">
+              <button class="btn btn-primary" onclick="togglePreview('pdf5', this)">Preview</button>
+              <a class="btn btn-secondary" href="Human-Robot%20Relationships.pdf" target="_blank">Open PDF</a>
+              <a class="btn btn-secondary" href="Human-Robot%20Relationships.pdf" download>Download</a>
+            </div>
           </div>
-          <div class="doc-actions">
-            <a class="btn btn-primary" href="Human-Robot%20Relationships.pdf" target="_blank">Open PDF</a>
-            <a class="btn btn-secondary" href="Human-Robot%20Relationships.pdf" download>Download</a>
+          <div class="preview-wrap" id="pdf5">
+            <iframe class="pdf-frame" src="Human-Robot%20Relationships.pdf"></iframe>
           </div>
-        </div>
-        <div class="embed-wrap">
-          <iframe class="pdf-frame" src="Human-Robot%20Relationships.pdf"></iframe>
-        </div>
-      </article>
+        </article>
 
-      <article class="doc-card">
-        <div class="doc-top">
-          <div class="doc-meta">
+        <article class="doc-card">
+          <div class="doc-top">
             <div class="doc-title-row">
-              <h3>Singularity</h3>
+              <h3 class="doc-title">Singularity</h3>
               <span class="tag">Future of Intelligence</span>
             </div>
-            <p>
-              A reflection on technological acceleration, transformative
-              intelligence, and the philosophical stakes of the singularity.
-            </p>
+            <p class="doc-desc">A reflection on technological acceleration, transformative intelligence, and the philosophical stakes of the singularity.</p>
+            <div class="doc-actions">
+              <button class="btn btn-primary" onclick="togglePreview('pdf6', this)">Preview</button>
+              <a class="btn btn-secondary" href="Singularity.pdf" target="_blank">Open PDF</a>
+              <a class="btn btn-secondary" href="Singularity.pdf" download>Download</a>
+            </div>
           </div>
-          <div class="doc-actions">
-            <a class="btn btn-primary" href="Singularity.pdf" target="_blank">Open PDF</a>
-            <a class="btn btn-secondary" href="Singularity.pdf" download>Download</a>
+          <div class="preview-wrap" id="pdf6">
+            <iframe class="pdf-frame" src="Singularity.pdf"></iframe>
           </div>
-        </div>
-        <div class="embed-wrap">
-          <iframe class="pdf-frame" src="Singularity.pdf"></iframe>
-        </div>
-      </article>
-    </section>
+        </article>
+      </section>
 
-    <div class="footer">
-      © Faraz Fookeer · Master’s Assignments
-    </div>
-  </main>
+      <div class="footer">© Faraz Fookeer · Master’s Assignments</div>
+    </main>
+  </div>
+
+  <script>
+    function togglePreview(id, button) {
+      const preview = document.getElementById(id);
+      const isOpen = preview.classList.contains('active');
+
+      document.querySelectorAll('.preview-wrap').forEach((el) => {
+        el.classList.remove('active');
+      });
+
+      document.querySelectorAll('.doc-actions .btn-primary').forEach((btn) => {
+        if (btn.tagName === 'BUTTON') {
+          btn.textContent = 'Preview';
+        }
+      });
+
+      if (!isOpen) {
+        preview.classList.add('active');
+        button.textContent = 'Hide Preview';
+      }
+    }
+  </script>
 </body>
 </html>
